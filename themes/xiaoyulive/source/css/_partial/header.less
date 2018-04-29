@@ -1,116 +1,101 @@
-.top-header {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    color: @textPrimaryColor;
-    height: @headerH;
-    background: @primaryColor;
-    -webkit-transition: padding-left .6s ease-in-out, background-color .3s cubic-bezier(.4, 0, .2, 1), box-shadow .15s linear;
-    transition: padding-left .6s ease-in-out, background-color .3s cubic-bezier(.4, 0, .2, 1), box-shadow .15s linear;
-    z-index: 30;
+* {
+  margin: 0;
+  padding: 0;
+}
+@base-height: 1000px;
 
-    &.fixed {
-        box-shadow: @boxShadow;
-
-        .header-title {
-            visibility: visible;
+#wrap {
+  width: 1300px;
+  margin: 0 auto;
+  // 顶部导航
+  #nav {
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #000;
+    .logo {
+    }
+    .bar {
+      flex: 1;
+      display: flex;
+      margin-left: 3em;
+      .item {
+        margin: 1em;
+      }
+    }
+    .search-bar {
+      margin: 1em;
+      .search-input {
+        margin-right: 1em;
+      }
+    }
+  }
+  // main
+  #main {
+    min-height: @base-height;
+    display: flex;
+    .main-part {
+      flex: 1;
+      display: flex;
+      padding-top: 1em;
+      // 最新书籍
+      .book-part {
+        flex-basis: 200px;
+        .book {
+          text-align: center;
+          .book-cover {
+            width: 120px;
+            height: 160px;
+          }
         }
+      }
+      // 最新博文
+      .article-part {
+        flex: 1;
+        .article {
+          margin: 2em;
+          padding: 1em;
+          border: 1px solid #ccc;
+          border-radius: .4em;
+          .article-info {
+            display: flex;
+            .article-time {
 
-    }
+            }
+            .article-category {
 
-}
+            }
+          }
+          .article-title {
+            font-size: 1.4em;
+          }
+          .article-excerpt {
 
-.header-icon {
-    width: @headerH;
-    height: @headerH;
-    line-height: @headerH;
-    text-align: center;
-    color: @textPrimaryColor;
-
-    &:hover {
-        color: @textPrimaryColor;
-    }
-}
-
-.header-title {
-    visibility: hidden;
-    font-weight: 400;
-    line-height: 56px;
-    font-size: 16px;
-    text-align: center;
-    white-space: nowrap;
-}
-
-.content-header {
-    min-height: 210px;
-    margin-left: -240px;
-    padding: 104px 16px 48px 256px;
-    color: @textPrimaryColor;
-    background: @primaryColor;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
-
-    .subtitle {
-        padding-top: 6px;
-        font-weight: 300;
-        color: @lightPrimaryColor;
-    }
-
-    .title {
-        font-weight: 500;
-    }
-
-    .article-category-list-link {
-        color: lighten(@accentColor, 10%);
-    }
-
-}
-
-.post-header {
-
-    .title, .subtitle {
-        display: none;
-    }
-}
-.tags-header,
-.categories-header {
-    position: relative;
-    z-index: 6;
-    padding-bottom: 0!important
-}
-
-@media screen and (max-width:1240px) {
-
-    .header-title {
-        text-align: left;
-    }
-
-}
-
-@media screen and (max-width:760px) {
-    .content-header {
-        margin: 0;
-        min-height: auto;
-        padding: 72px 16px 20px;
-
-        .title {
-            font-size: 24px;
-            line-height: 30px;
+          }
         }
-
-        .subtitle {
-            font-size: 14px;
-            line-height: 20px
-        }
-
+      }
     }
-
-    .post-header {
-        .title {
-            display: block;
-            font-size: 24px;
-            line-height: 1.5;
-        }
+    // 侧边栏
+    .side-bar {
+      flex-basis: 20%;
     }
+  }
+  // footer
+  #footer {
+    height: 5em;
+    .top {
+      height: 2em;
+      background-color: #ccc;
+    }
+    .bottom {
+      height: 3em;
+      background-color: #f0f;
+    }
+  }
+}
 
+.column-title {
+  margin: 1em 0 1em 1.6em;
 }

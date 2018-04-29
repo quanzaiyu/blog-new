@@ -1,0 +1,7 @@
+extends ./_partial/layout.pug
+
+block prepend head
+  title #{config.title}
+
+block append content
+  !=partial('_partial/post/main-part.pug', {cache: true})

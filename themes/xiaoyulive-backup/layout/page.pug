@@ -1,0 +1,7 @@
+extends ./_partial/layout.pug
+
+block prepend head
+  title 分页
+
+block append content
+  - partial('_partial/article', {post: page, index: false})

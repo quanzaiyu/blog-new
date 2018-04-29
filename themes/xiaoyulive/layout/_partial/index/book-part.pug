@@ -1,0 +1,6 @@
+//- 最新书籍
+.book-part
+  p.column-title 最新书籍
+  for book in [1,2,3,4,5]
+    .book
+      !=image_tag('image/cover.jpg', {class: 'book-cover'})

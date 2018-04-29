@@ -1,0 +1,22 @@
+extends ./_partial/layout.pug
+
+block prepend head
+  title #{config.title}
+
+block append content
+  h1: a(href=url_for()) home
+  .menus
+    each menu, key in theme.menu
+      p: a(href=menu)=key
+  #posts
+    - page.posts.each(post => {
+      p=post.layout
+      p=post.cover
+      p=post.links
+      - var link = post.link || post.path
+      a.post-title(href=url_for(link))= post.title || _p('no_title')
+      time.post-meta__date #[=date(post.date, config.date_format)]
+      //- .content=post.excerpt
+    - })
+  //- .sort('date', -1).limit(10)
+  div!=partial('_partial/article', {post: page, index: false})

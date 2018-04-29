@@ -1,0 +1,19 @@
+//- 插入归档列表
+.archives
+  .archive!=list_archives()
+
+//- 插入分类列表
+.categories
+  .category!=list_categories()
+
+//- 插入文章列表
+.posts
+  .post!=list_posts()
+
+//- 插入分页链接
+.pagination
+  .paginator!=paginator({ prev_text: '上一页', next_text: '下一页' })
+
+//- 插入标签云
+.tags
+  .tagcloud!=tagcloud(site.tags)

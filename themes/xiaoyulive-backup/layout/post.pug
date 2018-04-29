@@ -1,0 +1,37 @@
+extends ./_partial/layout.pug
+
+block prepend head
+  title #{page.title}
+
+block append content
+  h1.title=page.title
+  p.date 创建时间 #[=page.date]
+  p.updated 更新时间 #[=page.updated]
+  p.comments 留言是否开启 #[=page.comments]
+  p.layout 布局名称 #[=page.layout]
+  p.excerpt 内容摘要: #[!=page.excerpt] #[hr]
+  p.more 除了页面摘要的其余内容: #[!=page.more] #[hr]
+  p.source 页面原始路径 #[=page.source]
+  p.path 页面网址（不含根路径）。我们通常在主题中使用 url_for(page.path) #[=page.path]
+  p.permalink 页面的完整网址 #[=page.permalink]
+  p.raw 文章的原始内容 #[=page.raw]
+  p.photos 文章的照片（用于相簿） #[=page.photos]
+  p.link 文章的外部链接（用于链接文章） #[=page.link]
+
+  p.content!=page.content
+
+  
+  p.published 如果该文章已发布则为True #[=page.published]
+  p.categories 该文章的所有分类
+    .categorie!=list_categories(page.categories, { show_count: false, class: 'article-category', style: 'none', separator: '►' })
+  p.tags 该文章的所有标签
+    .tag!=list_tags(page.tags, { show_count: false, class: 'article-tag' })
+  
+  //- 分页
+  if page.prev
+    p: a(href=url_for(page.prev.path))=page.prev.title
+  if page.next
+    p: a(href=url_for(page.next.path))=page.next.title
+
+  //- TOC
+  .toc!=toc(page.content)

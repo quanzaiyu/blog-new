@@ -1,0 +1,12 @@
+//- 最新博文
+.article-part
+  p.column-title 最新博文
+    - page.posts.each(post => {
+      - var link = post.link || post.path
+      .article
+        .article-info
+          .article-time=date(post.date, config.date_format)
+          .article-category=page.categories
+        .article-title: a.post-title(href=url_for(link))= post.title || _p('no_title')
+        .article-excerpt #[span=post.excerpt]
+    - })

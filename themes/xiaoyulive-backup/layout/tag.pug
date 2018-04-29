@@ -1,0 +1,12 @@
+extends ./_partial/layout.pug
+
+block prepend head
+  title tag
+
+block append content
+  div=page.tag
+  - page.posts.each(post => {
+    - var link = post.link || post.path
+    p: a.post-title(href=url_for(link))= post.title || _p('no_title')
+    time.post-meta__date #[=date(post.date, config.date_format)]
+  - })

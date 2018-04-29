@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "hexo serve",
-    "build": "hexo g -d"
+    "build": "hexo g -d",
+    "push": "git add * && git commit -am 0 && git push origin master"
   },
   "hexo": {
     "version": "3.3.9"

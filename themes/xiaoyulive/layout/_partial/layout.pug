@@ -1,0 +1,14 @@
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    block head
+    !=css('css/style')
+  body
+    #wrap
+      !=partial('_partial/header.pug', {cache: true})
+      #main
+        block content
+        !=partial('_partial/side-bar.pug', {cache: true})
+      !=partial('_partial/footer.pug', {cache: true})
