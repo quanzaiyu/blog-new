@@ -1,8 +1,10 @@
 #nav
-  .logo: !=image_tag('image/logo.png', {class: 'book-cover'})
-  ul.bar
-    for item in ['首页', '开发之路', '奇巧淫技', '生活漫谈', '开源书籍']
-      li.item=item
-  .search-bar
-    input.search-input
-    span 搜索
+  .wrap
+    .wrap-main
+      .logo: !=image_tag('image/logo.png', {class: 'book-cover'})
+      ul.bar
+        for item in ['首页', '开发之路', '奇巧淫技', '生活漫谈', '开源书籍']
+          li.item=item
+      .search-bar
+        input.search-input
+        button.search-btn 搜索

@@ -1,0 +1,51 @@
+// main
+#main {
+  .wrap-main {
+    min-height: @base-height;
+    display: flex;
+    .main-part {
+      flex: 1;
+      display: flex;
+      padding-top: 1em;
+      // 最新书籍
+      .book-part {
+        flex-basis: 200px;
+        .book {
+          text-align: center;
+          .book-cover {
+            width: 120px;
+          }
+        }
+      }
+      // 最新博文
+      .article-part {
+        flex: 1;
+        .article {
+          margin: 2em;
+          padding: 1em;
+          border: 1px solid #ccc;
+          border-radius: .4em;
+          .article-info {
+            display: flex;
+            .article-time {
+
+            }
+            .article-category {
+
+            }
+          }
+          .article-title {
+            font-size: 1.4em;
+          }
+          .article-excerpt {
+
+          }
+        }
+      }
+    }
+    // 侧边栏
+    .side-bar {
+      flex-basis: 20%;
+    }
+  }
+}

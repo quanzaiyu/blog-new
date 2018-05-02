@@ -1,101 +1,46 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-@base-height: 1000px;
-
-#wrap {
-  width: 1300px;
-  margin: 0 auto;
-  // 顶部导航
-  #nav {
-    height: 70px;
+// 顶部导航
+#nav {
+  background-color: @bd-color-dark;
+  .wrap-main {
+    height: 54px;
     display: flex;
-    align-items: flex-end;
-    margin-top: 1em;
-    padding-bottom: 1em;
-    border-bottom: 1px solid #000;
+    align-items: center;
+    color: #fff;
     .logo {
+      width: 130px;
+      height: 30px;
+      margin-right: 2em;
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
     .bar {
       flex: 1;
       display: flex;
       margin-left: 3em;
+      font-size: 16px;
       .item {
-        margin: 1em;
+        margin-right: 2em;
       }
     }
     .search-bar {
-      margin: 1em;
+      width: 270px;
+      height: 20px;
+      border-radius: .2em;
+      padding: .2em 1em;
+      background-color: #fff;
+      display: flex;
+      .search-input, .search-btn {
+        outline: none;
+        border: none;
+        background-color: #fff;
+      }
       .search-input {
+        flex: 1;
+        border-right: 1px solid @bd-color;
         margin-right: 1em;
       }
     }
   }
-  // main
-  #main {
-    min-height: @base-height;
-    display: flex;
-    .main-part {
-      flex: 1;
-      display: flex;
-      padding-top: 1em;
-      // 最新书籍
-      .book-part {
-        flex-basis: 200px;
-        .book {
-          text-align: center;
-          .book-cover {
-            width: 120px;
-            height: 160px;
-          }
-        }
-      }
-      // 最新博文
-      .article-part {
-        flex: 1;
-        .article {
-          margin: 2em;
-          padding: 1em;
-          border: 1px solid #ccc;
-          border-radius: .4em;
-          .article-info {
-            display: flex;
-            .article-time {
-
-            }
-            .article-category {
-
-            }
-          }
-          .article-title {
-            font-size: 1.4em;
-          }
-          .article-excerpt {
-
-          }
-        }
-      }
-    }
-    // 侧边栏
-    .side-bar {
-      flex-basis: 20%;
-    }
-  }
-  // footer
-  #footer {
-    height: 5em;
-    .top {
-      height: 2em;
-      background-color: #ccc;
-    }
-    .bottom {
-      height: 3em;
-      background-color: #f0f;
-    }
-  }
-}
-
-.column-title {
-  margin: 1em 0 1em 1.6em;
 }
